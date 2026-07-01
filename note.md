@@ -36,3 +36,30 @@
 10. Setup new system: `systemctl enable NetworkManager`
 11. Exit Live USB and reboot into normal Linux system.
 
+## Commonly used commands
+
+1. Pacman related
+- List explicitly installed packages: `sudo pacman -Qqe`
+
+2. Filesystem related
+- `lsblk -f`
+- `blkid`
+- examine ext4 FS: `e2fsck`
+- format partition: `mkfs.ext4`, `mkfs.ntfs`, etc
+
+3. Network related
+- NetworkManager is a service, so need `systemctl enable NetworkManager` to start.
+- `nmtui`
+
+4. Systemd sucks
+
+## Steam
+
+1. Delete steam runtime files when need to install steam `rm -rf ~/.steam`
+2. Technically `steam (not AUR)` can run on xwayland (`xorg-xwayland`) with no other config required
+3. WallpaperEngine may not be runnable, try `waywallen`
+
+## Noctalia v5
+
+`noctalia msg panel-toggle ...` i.e. `launcher`
+
