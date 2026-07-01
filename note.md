@@ -20,10 +20,10 @@
 6. `genfstab -U /mnt > /mnt/etc/fstab`
 7. Enter this new system: `arch-chroot /mnt`
 8. Basic configures:
-    8.1) `ln -sf /usr/share/zoneinfo/... /etc/localtime`, `hwclock --systohc`
-    8.2) Uncomment `en_US.UTF-8` line in file `/etc/locale.gen`, then execute `locale-gen`,
+    - `ln -sf /usr/share/zoneinfo/... /etc/localtime`, `hwclock --systohc`
+    - Uncomment `en_US.UTF-8` line in file `/etc/locale.gen`, then execute `locale-gen`,
         and `echo LANG=en_US.UTF-8 > /etc/locale.conf`
-    8.3) Change hostname, root password and user account
+    - Change hostname, root password and user account
         `echo <pcname> > /etc/hostname`, `passwd`, `useradd ...`, `passwd <username>`, `chgrp ...`
 9. Install GRUB:
     ```bash
