@@ -38,28 +38,34 @@
 
 ## Commonly used commands
 
-1. Pacman related
-- List explicitly installed packages: `sudo pacman -Qqe`
+* Pacman related
+    - List explicitly installed packages: `sudo pacman -Qqe`
 
-2. Filesystem related
-- `lsblk -f`
-- `blkid`
-- examine ext4 FS: `e2fsck`
-- format partition: `mkfs.ext4`, `mkfs.ntfs`, etc
+* Filesystem related
+    - `lsblk -f`
+    - `blkid`
+    - `fdisk -l`
+    - examine ext4 FS: `e2fsck`
+    - format partition: `mkfs.ext4`, `mkfs.ntfs`, etc
 
-3. Network related
-- NetworkManager is a service, so need `systemctl enable NetworkManager` to start.
-- `nmtui`
+* Network related
+    - NetworkManager is a service, so need `systemctl enable NetworkManager` to start.
+    - `nmtui`
 
-4. Systemd sucks
+* Permission
+    - Display permission `ls -ld /path`, `stat -c "%a %n" /path`, `getfacl /path`, `namei -m /path`
 
 ## Steam
 
-1. Delete steam runtime files when need to install steam `rm -rf ~/.steam`
-2. Technically `steam (not AUR)` can run on xwayland (`xorg-xwayland`) with no other config required
-3. WallpaperEngine may not be runnable, try `waywallen`
+* Delete steam runtime files when need to install steam `rm -rf ~/.steam`
+* Technically `steam (not AUR)` can run on xwayland (`xorg-xwayland`) with no other config required
+* WallpaperEngine may not be runnable, try `waywallen`
+* Share game file between win and linux:
+    - install one win-only game in local, then install Proton by starting the game, then shift to games on other disk.
+    - setting partition FSTYPE to `ntfs` in `/etc/fstab` will make it read-only after booting, set to `ntfs3` solves.
+    - sometimes NTFS will meet issue that can be solved by switching to windows and run `chkdsk /f X:`
 
 ## Noctalia v5
 
-`noctalia msg panel-toggle ...` i.e. `launcher`
+* `noctalia msg panel-toggle ...` i.e. `launcher`
 
