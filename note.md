@@ -40,7 +40,7 @@
 
 1. Download the file: go to git repo and download the `.tar.gz` from Release page, then `tar xf ...`, then `cd linux-...`
 2. Prepare before compiling:
-    - `cp /usr/lib/modules/$(uname -r)/build/.config .config`
+    - `zcat /proc/config.gz > .config`, where `/proc/config.gz` is a compress of current system config. Works well on Arch.
     - `make olddefconfig`
 3. Compile:  
     - `make -j$(nproc)`
