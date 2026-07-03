@@ -55,6 +55,10 @@
 * Permission
     - Display permission `ls -ld /path`, `stat -c "%a %n" /path`, `getfacl /path`, `namei -m /path`
 
+* Curl
+    - param `-L` means to follow redirect
+    - `-O` means to keep filename, or `-o <filename>` for custom filename
+
 ## Steam
 
 * Delete steam runtime files when need to install steam `rm -rf ~/.steam`
