@@ -38,12 +38,12 @@
 
 ## Manually update kernel
 
-1. Download the file: go to git repo and download the `.tar.gz` from Release page, then `tar xf ...`
+1. Download the file: go to git repo and download the `.tar.gz` from Release page, then `tar xf ...`, then `cd linux-...`
 2. Prepare before compiling:
     - `cp /usr/lib/modules/$(uname -r)/build/.config .config`
     - `make olddefconfig`
 3. Compile:  
-    - `cd linux-... && make -j$(nproc)`
+    - `make -j$(nproc)`
     - `sudo make modules_install`
     - `sudo make install`
 3. Update initramfs: `sudo mkinitcpio -p <package_name>` or `-P` for all packages.
