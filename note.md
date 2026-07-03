@@ -36,6 +36,19 @@
 10. Setup new system: `systemctl enable NetworkManager`
 11. Exit Live USB and reboot into normal Linux system.
 
+## Manually update kernel
+
+1. Download the file: go to git repo and download the `.tar.gz` from Release page, then `tar xf ...`
+2. Prepare before compiling:
+    - `cp /usr/lib/modules/$(uname -r)/build/.config .config`
+    - `make olddefconfig`
+3. Compile:  
+    - `cd linux-... && make -j$(nproc)`
+    - `sudo make modules_install`
+    - `sudo make install`
+3. Update initramfs: `sudo mkinitcpio -p <package_name>` or `-P` for all packages.
+4. Update grub config: `sudo grub-mkconfig -o /boot/grub/grub.cfg`
+
 ## Commonly used commands
 
 * Pacman related
